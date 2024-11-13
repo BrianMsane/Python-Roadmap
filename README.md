@@ -109,3 +109,13 @@ These developers are typically responsible for building, maintaining, and testin
   <li>Curl and Postman (API Testing during development)</li>
   <li>Python linting</li>
 </ul>
+
+<h3>Important Practices</h3>
+<ul>
+  <li>Debugging Code</li>
+  <ul>
+    <li>Debugging mindset</li>
+    <li>Pinpointing issues</li>
+    <li>Writing bug reports</li>
+  </ul>
+</ul>
