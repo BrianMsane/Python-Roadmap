@@ -25,3 +25,25 @@
     </p>
     </li>
 </ol>
+
+<h2>Dependency Injection</h2>
+<p>
+Dependecny Injection is a design pattern that allows the separation of the creation of an object from its dependencies. It allows a class to receive its dependencis from an external source instead of creating them itself. This makes your code more modular, easier to test, and maintain. One area where DI is particularly useful is managing database connections and operations.
+</p>
+
+<p>
+For instance, connecting to MongoDB can be done by creating a function that will handle the database connection and then use this dependency injection. It can be used in API endpoints whereby you can use the Depends class from FastAPI and use it for all the endpoints which need to have access to your database. There are a couple of benefits to this and those could be:
+</p>
+
+<ul>
+<li>Separation of concerns: By separating the database logic from the business logic, you code is easier to manage</li>
+<li>Reusability of code: You connection function can be used across the code base</li>
+<li>Easier testing: it is easy to pinpoint issues.</li>
+</ul>
+
+Uses of Dependency injection
+<ul>
+<li>Authetication</li>
+<li>Database connection</li>
+<li></li>
+</ul>
