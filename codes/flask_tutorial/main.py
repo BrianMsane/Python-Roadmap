@@ -1,19 +1,17 @@
-"""Let's Learn the framework"""
+"""Let's learn the Flask framework"""
 
 from flask import Flask
-from flask_restful import Api, Resource
+from flask_restful import Api
+from resources.users import Users
+from resources.videos import Video
 
 app = Flask(__name__)
 api = Api(app)
 
 
-class MyResource(Resource):
-    def get(self):
-        return {"message": "This is a get request"}  # return serializable information
+api.add_resource(Users, "/users/<int: id>")
+api.add_resource(Video, "/videos/<string: id>")
 
 
-api.add_resource(MyResource, "/")
-
-
-if __name__ == "__name__":
+if __name__ == "__main__":
     app.run(debug=True)
