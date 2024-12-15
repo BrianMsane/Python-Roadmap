@@ -1,13 +1,35 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 from data import video_data
+from jsonschema import validate, ValidationError
+
+video_args = reqparse.RequestParser()
+video_args.add_argument("name", type=str, help="the name of the video")
+video_args.add_argument("views", type=int, help="the number of views")
+video_args.add_argument("likes", type=int, help="the number of likes")
+
+schema = {
+    "type": "object",
+    "properties": {
+        "name": {"type": "string"},
+        "views": {"type": "integer"},
+        "likes": {"type": "integer"},
+    },
+    "required": ["name", "likes", "views"],
+}
 
 
 class Video(Resource):
     def get(self, id):
-        pass
+        return video_data[id]
 
     def post(self, id):
-        pass
+        args = video_args.parse_args()
+        try:
+            validate(instance=args, schema=schema)
+        except ValidationError as err:
+            raise TypeError("The schema is invalid")
+        else:
+            return {id: args}
 
     def delete(self, id):
         pass

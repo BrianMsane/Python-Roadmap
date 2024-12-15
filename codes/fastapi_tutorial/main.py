@@ -2,7 +2,7 @@
 """
 
 from fastapi import FastAPI
-from rate_limiting import AdvancedMiddleware
+from codes.fastapi_tutorial.rate_limiting import AdvancedMiddleware
 from resolvers import register
 
 app = FastAPI()
