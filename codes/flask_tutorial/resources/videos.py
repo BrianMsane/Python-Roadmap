@@ -3,9 +3,9 @@ from data import video_data
 from jsonschema import validate, ValidationError
 
 video_args = reqparse.RequestParser()
-video_args.add_argument("name", type=str, help="the name of the video")
-video_args.add_argument("views", type=int, help="the number of views")
-video_args.add_argument("likes", type=int, help="the number of likes")
+video_args.add_argument("name", type=str, help="the name of the video", required=True)
+video_args.add_argument("views", type=int, help="the number of views", required=True)
+video_args.add_argument("likes", type=int, help="the number of likes", required=True)
 
 schema = {
     "type": "object",
@@ -27,7 +27,7 @@ class Video(Resource):
         try:
             validate(instance=args, schema=schema)
         except ValidationError as err:
-            raise TypeError("The schema is invalid")
+            raise TypeError(f"The schema is invalid: {err}")
         else:
             return {id: args}
 
