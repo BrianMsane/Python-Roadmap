@@ -23,9 +23,9 @@ A deep understanding of the Python language is the foundation.
 
 - Variables and data types
 - Conditional statements
-- Comprehensions (list, dictionary, set)
 - Core Data Structures: Lists, Dictionaries, Tuples, Sets
-- Functions
+- Comprehensions (list, dictionary, set)
+- Functions (built-in and user-defined)
 - **Object-Oriented Programming (OOP)**
 - Meta classes
 - **Decorators**
@@ -33,10 +33,10 @@ A deep understanding of the Python language is the foundation.
 - Context managers
 - Iterators
 - Asynchronous programming (`async`/`await`)
-- **Global Interpreter Lock (GIL)** in Python
 - Multiprocessing and Multi-threading
 - Python modules and libraries (understanding the ecosystem)
 - Pythonic code standards (PEP 8)
+- Linting and code formatting
 
 ---
 
